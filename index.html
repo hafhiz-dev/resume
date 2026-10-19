@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohd Hafhiz Abdul Aziz - Freelance Developer Interactive Resume & Portfolio">
+  <meta name="keywords"
+    content="Resume, Curriculum Vitae, Freelance Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, Mohd Hafhiz Abdul Aziz">
+  <meta name="author" content="Mohd Hafhiz Abdul Aziz">
+
+  <!-- Open Graph / Meta for Social Media & GitHub Pages -->
+  <meta property="og:title" content="Mohd Hafhiz Abdul Aziz | Freelance Developer Resume">
+  <meta property="og:description"
+    content="Interactive professional resume and portfolio featuring modern HTML5, CSS3, and JavaScript functionality.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/profile.jpg">
+
+  <title>Mohd Hafhiz Abdul Aziz | Freelance Developer</title>
+
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome Icons for crisp resume symbols -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="top" data-theme="light">
+
+  <!-- ================= TOP UTILITY / APP BAR ================= -->
+  <header class="app-nav" id="topNav">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <span class="brand-avatar-mini">
+          <img src="./assets/profile.jpg" alt="Mohd Hafhiz Abdul Aziz thumbnail">
+        </span>
+        <div class="brand-text">
+          <span class="brand-name">Mohd Hafhiz <strong>Abdul Aziz</strong></span>
+          <span class="brand-status"><span class="status-dot"></span> Available for projects</span>
+        </div>
+      </div>
+
+      <!-- Action Controls (Theme Toggle, Print, Contact Button) -->
+      <div class="nav-actions">
+        <!-- Contact Button -->
+        <button id="navContactBtn" class="control-btn" title="Message via Telegram (@MrIlmu)">
+          <i class="fa-brands fa-telegram" style="color: #229ED9;"></i>
+          <span class="btn-text">Contact</span>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="themeToggleBtn" class="control-btn" title="Toggle Dark/Light Mode" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon theme-icon"></i>
+          <span class="btn-text theme-label">Dark</span>
+        </button>
+
+        <!-- Background Music Toggle -->
+        <button id="musicToggleBtn" class="control-btn" title="Play / Pause Background Music" aria-label="Toggle Music">
+          <i class="fa-solid fa-music music-btn-icon" id="musicNavIcon"></i>
+          <span class="btn-text music-btn-label">Music</span>
+          <span class="music-mini-wave" id="musicMiniWave" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <!-- Print / PDF Button -->
+        <button id="printBtn" class="control-btn primary-action" title="Print / Download PDF">
+          <i class="fa-solid fa-print"></i>
+          <span class="btn-text">Print / PDF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= DYNAMIC GREETING & NOTIFICATION BAR ================= -->
+  <div class="greeting-banner" id="greetingBanner">
+    <div class="greeting-content">
+      <span class="greeting-icon" id="greetingIcon">👋</span>
+      <span class="greeting-text" id="greetingText">Good day! Welcome to my interactive resume.</span>
+      <span class="greeting-time" id="currentTimeBadge"></span>
+    </div>
+    <button class="greeting-dismiss" id="dismissGreeting" title="Dismiss banner">&times;</button>
+  </div>
+
+  <!-- ================= MAIN RESUME WRAPPER ================= -->
+  <main class="page-wrapper">
+    <div class="resume-sheet" id="resumeSheet">
+
+      <!-- ================= LEFT SIDEBAR ================= -->
+      <aside class="sidebar" id="sidebar">
+
+        <!-- Top Geometric Yellow Accents & Profile Arch -->
+        <div class="profile-header-container">
+          <!-- Geometric Yellow Corner Triangle -->
+          <div class="top-yellow-cutout" aria-hidden="true"></div>
+
+          <!-- Arched Profile Photo Frame -->
+          <div class="avatar-arch-wrapper">
+            <div class="avatar-arch">
+              <img src="./assets/profile.jpg" alt="Profile Portrait" id="profileImage">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Content Sections -->
+        <div class="sidebar-body">
+
+          <!-- 1. CONTACT ME -->
+          <section class="sidebar-section" id="contact-section">
+            <div class="sidebar-heading-wrapper">
+              <span class="sidebar-pill" aria-hidden="true"></span>
+              <h2 class="sidebar-title">
+                <span class="title-icon"><i class="fa-solid fa-circle-user"></i></span>
+                <span class="title-text editable" data-key="sec_contact">CONTACT ME</span>
+              </h2>
+            </div>
+
+            <div class="contact-list">
+
+              <!-- Website / Email -->
+              <div class="contact-item" data-copy="yourinfo@email.com" title="Click to copy email">
+                <div class="contact-marker"><i class="fa-solid fa-globe"></i></div>
+                <div class="contact-info">
+                  <p class="editable" data-key="website">github.com/hafhiz-dev</p>
+                  <p class="editable" data-key="email">hafhiz@yahoo.com</p>
+                </div>
+              </div>
+
+              <!-- Address -->
+              <div class="contact-item"
+                data-copy="Kompleks Niaga Sungai Merab, Jalan Sungai Merab, Kampung Sungai Merab Luar, 43000 Kajang, Selangor"
+                title="Click to copy address">
+                <div class="contact-marker"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="contact-info">
+                  <p class="editable" data-key="address_1">Kompleks Niaga Sungai Merab</p>
+                  <p class="editable" data-key="address_2">Jalan Sungai Merab, Kampung Sungai Merab Luar, 43000 Kajang,
+                    Selangor</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Dashed Divider -->
+          <div class="sidebar-divider" aria-hidden="true"></div>
+
+          <!-- 3. EDUCATION -->
+          <section class="sidebar-section" id="education-section">
+            <div class="sidebar-heading-wrapper">
+              <span class="sidebar-pill" aria-hidden="true"></span>
+              <h2 class="sidebar-title">
+                <span class="title-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                <span class="title-text editable" data-key="sec_education">EDUCATION</span>
+              </h2>
+            </div>
+
+            <div class="education-list">
+
+              <!-- University 1 -->
+              <div class="edu-card">
+                <span class="sidebar-dot" aria-hidden="true"></span>
+                <div class="edu-details">
+                  <h3 class="edu-school editable" data-key="edu_1_school">MARA UNIVERSITY OF TECHNOLOGY (UiTM)</h3>
+                  <p class="edu-degree editable" data-key="edu_1_deg">BACHELOR OF COMPUTER SCIENCE</p>
+                  <p class="edu-year editable" data-key="edu_1_year">2022 - Current</p>
+                </div>
+              </div>
+
+              <!-- University 2 -->
+              <div class="edu-card">
+                <span class="sidebar-dot" aria-hidden="true"></span>
+                <div class="edu-details">
+                  <h3 class="edu-school editable" data-key="edu_1_school">UNIVERSITY KEBANGSAAN MALAYSIA (UKM)</h3>
+                  <p class="edu-degree editable" data-key="edu_1_deg">MASTER OF ISLAMIC ECONOMIC</p>
+                  <p class="edu-year editable" data-key="edu_1_year">2016 - 2019</p>
+                </div>
+              </div>
+
+              <!-- University 3 -->
+              <div class="edu-card">
+                <span class="sidebar-dot" aria-hidden="true"></span>
+                <div class="edu-details">
+                  <h3 class="edu-school editable" data-key="edu_2_school">UNIVERSITY SELANGOR</h3>
+                  <p class="edu-degree editable" data-key="edu_2_deg">BACHELOR OF BUSINESS MANAGEMENT</p>
+                  <p class="edu-year editable" data-key="edu_2_year">2010 - 2014</p>
+                </div>
+              </div>
+
+              <!-- Certificate 1 -->
+              <div class="edu-card">
+                <span class="sidebar-dot" aria-hidden="true"></span>
+                <div class="edu-details">
+                  <h3 class="edu-school editable" data-key="cert_1_name">MALAYSIAN HIGHER SCHOOL CERTIFICATE (STPM)
+                  </h3>
+                  <p class="edu-degree editable" data-key="cert_1_org">BUSINESS ACCOUNTING</p>
+                  <p class="edu-year editable" data-key="cert_1_year">2007 – 2008</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </aside>
+
+      <!-- ================= RIGHT MAIN CONTENT ================= -->
+      <section class="main-content" id="mainContent">
+
+        <!-- Continuous vertical timeline line from top to bottom -->
+        <div class="timeline-line-rail" aria-hidden="true"></div>
+
+        <!-- Top Header Strip with Name & Title -->
+        <header class="resume-header">
+          <div class="header-banner">
+            <!-- Yellow vertical capsule centered on the timeline rail -->
+            <span class="header-timeline-pill" aria-hidden="true"></span>
+            <div class="header-name-box">
+              <h1 class="person-name">
+                <span class="first-name editable" data-key="first_name">MOHD HAFHIZ</span>
+                <span class="last-name editable" data-key="last_name">ABDUL AZIZ</span>
+              </h1>
+              <p class="person-role editable" data-key="role_title">FREELANCE DEVELOPER & AI ENGINEER</p>
+            </div>
+          </div>
+        </header>
+
+        <!-- Right Content Blocks -->
+        <div class="content-body">
+
+          <!-- Section 1: ABOUT ME -->
+          <article class="content-block" id="about-section">
+            <div class="section-badge-anchor">
+              <span class="timeline-node-circle" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+              <h2 class="section-title">
+                <span class="sec-text editable" data-key="sec_about">ABOUT ME</span>
+              </h2>
+            </div>
+
+            <div class="section-body">
+              <p class="about-text editable" data-key="about_description">
+                I'm a Freelance Developer & AI Engineer and the founder of NXO SOLUTION, specializing in AI-powered
+                backend systems, custom software, and system applications for machines and manufacturing. I've
+                successfully delivered more than 3 completed projects for clients across Malaysia—from media software
+                and online management systems to industrial production dashboards—taking each from concept and
+                architecture through to deployment and support.
+
+                Beyond tech, I also run MOSZA RACING, where I lead R&D for 150cc motorcycle performance components,
+                giving me rare hands-on experience bridging software engineering with real-world mechanical systems.
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 2: JOB EXPERIENCE -->
+          <article class="content-block" id="experience-section">
+            <div class="section-badge-anchor">
+              <span class="timeline-node-circle" aria-hidden="true"><i class="fa-solid fa-briefcase"></i></span>
+              <h2 class="section-title">
+                <span class="sec-text editable" data-key="sec_experience">JOB EXPERIENCE</span>
+              </h2>
+            </div>
+
+            <div class="section-body experience-timeline">
+              <!-- Job 1 -->
+              <div class="experience-item">
+                <span class="exp-bullet" aria-hidden="true"></span>
+                <div class="exp-content">
+                  <div class="exp-header">
+                    <h3 class="exp-title editable" data-key="exp_1_title">FOUNDER & OWNER</h3>
+                    <span class="exp-period editable" data-key="exp_1_period">2017 - Present</span>
+                  </div>
+                  <h4 class="exp-company editable" data-key="exp_1_company">NXO SOLUTION</h4>
+                  <p class="exp-desc editable" data-key="exp_1_desc">
+                    Founded NXO SOLUTION, a freelance development studio delivering AI-powered backend systems,
+                    custom software, and system applications for machines and manufacturing industries.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Job 2 -->
+              <div class="experience-item">
+                <span class="exp-bullet" aria-hidden="true"></span>
+                <div class="exp-content">
+                  <div class="exp-header">
+                    <h3 class="exp-title editable" data-key="exp_2_title">FOUNDER & OWNER</h3>
+                    <span class="exp-period editable" data-key="exp_2_period">2020 - Present</span>
+                  </div>
+                  <h4 class="exp-company">
+                    <span class="editable" data-key="exp_2_company">MOSZA RACING</span>
+                    <span class="exp-company-sep" aria-hidden="true">•</span>
+                    <a href="https://moszaracing.com/" target="_blank" rel="noopener noreferrer"
+                      class="exp-website-link" title="Visit Mosza Racing Website (https://moszaracing.com/)">
+                      <i class="fa-solid fa-globe"></i>
+                      <span>moszaracing.com</span>
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                  </h4>
+                  <p class="exp-desc editable" data-key="exp_2_desc">
+                    Founded and own MOSZA RACING, a motorcycle parts business specializing in R&D, development, and
+                    distribution of performance components for 150cc motorcycles.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Job 3 -->
+              <div class="experience-item">
+                <span class="exp-bullet" aria-hidden="true"></span>
+                <div class="exp-content">
+                  <div class="exp-header">
+                    <h3 class="exp-title editable" data-key="exp_3_title">ADMIN OFFICER</h3>
+                    <span class="exp-period editable" data-key="exp_3_period">2015 - 2016</span>
+                  </div>
+                  <h4 class="exp-company editable" data-key="exp_3_company">MALAYSIAN WELDING AND JOINING SOCIETY</h4>
+                  <p class="exp-desc editable" data-key="exp_3_desc">
+                    Served as Administrator for the Malaysian Welding and Joining Society, handling membership records,
+                    event coordination, and daily administrative operations.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Section 3: SKILLS -->
+          <article class="content-block" id="skills-section">
+            <div class="section-badge-anchor">
+              <span class="timeline-node-circle" aria-hidden="true"><i class="fa-solid fa-compass-drafting"></i></span>
+              <h2 class="section-title">
+                <span class="sec-text editable" data-key="sec_skills">SKILLS</span>
+              </h2>
+            </div>
+
+            <div class="section-body">
+              <div class="skills-grid">
+                <!-- Skill 1 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_1_name">Adobe Photoshop</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="95%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 2 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_3_name">Microsoft Word</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="95%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 3 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_5_name">HTML-S/CSS-3</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="95%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 4 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_2_name">Adobe Illustrator</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="80%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 5 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_4_name">Microsoft Powerpoint</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="95%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 6 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_6_name">Python</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="85%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 7 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_7_name">C#</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="75%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 8 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_8_name">C++</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="75%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 9 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_9_name">MySQL</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="80%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 10 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_10_name">Flutter</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="80%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 11 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_11_name">Laravel</span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="60%"></div>
+                  </div>
+                </div>
+
+                <!-- Skill 12 -->
+                <div class="skill-item">
+                  <span class="skill-name editable" data-key="skill_12_name">JavaScript </span>
+                  <div class="skill-track">
+                    <div class="skill-bar" data-width="80%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Section 4: PROJECT ACHIEVEMENTS -->
+          <article class="content-block" id="projects-section">
+            <div class="section-badge-anchor">
+              <span class="timeline-node-circle" aria-hidden="true"><i class="fa-solid fa-trophy"></i></span>
+              <h2 class="section-title">
+                <span class="sec-text editable" data-key="sec_projects">PROJECT ACHIEVEMENTS</span>
+              </h2>
+            </div>
+
+            <div class="section-body projects-grid">
+              <!-- Project 1 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_1_title">MEDIA SOFTWARE</h3>
+                  <span class="project-year editable" data-key="proj_1_year">2017</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_1_company">MBI Selangor</h4>
+                <div class="project-footer">
+                  <span class="project-status status-completed"><i class="fa-solid fa-circle-check"></i> Project
+                    Completed</span>
+                </div>
+              </div>
+
+              <!-- Project 2 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_2_title">ONLINE MANAGEMENT SYSTEM</h3>
+                  <span class="project-year editable" data-key="proj_2_year">2020</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_2_company">Mosza Racing</h4>
+                <div class="project-footer">
+                  <span class="project-status status-completed"><i class="fa-solid fa-circle-check"></i> Project
+                    Completed</span>
+                </div>
+              </div>
+
+              <!-- Project 3 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_3_title">PRODUCTION MONITORING DASHBOARD</h3>
+                  <span class="project-year editable" data-key="proj_3_year">2023</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_3_company">Shah Alam Manufacturing</h4>
+                <div class="project-footer">
+                  <span class="project-status status-completed"><i class="fa-solid fa-circle-check"></i> Project
+                    Completed</span>
+                </div>
+              </div>
+
+              <!-- Project 4 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_4_title">PRODUCTION MONITORING DASHBOARD</h3>
+                  <span class="project-year editable" data-key="proj_4_year">2024</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_4_company">Penang Manufacturing</h4>
+                <div class="project-footer">
+                  <span class="project-status status-completed"><i class="fa-solid fa-circle-check"></i> Project
+                    Completed</span>
+                </div>
+              </div>
+
+              <!-- Project 5 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_5_title">AI CHATBOT &amp; CUSTOMER SUPPORT SYSTEM
+                  </h3>
+                  <span class="project-year editable" data-key="proj_5_year">2025</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_5_company">Cyberjaya Tech Startup</h4>
+                <div class="project-footer">
+                  <span class="project-status status-completed"><i class="fa-solid fa-circle-check"></i> Project
+                    Completed</span>
+                </div>
+              </div>
+
+              <!-- Project 6 -->
+              <div class="project-card">
+                <div class="project-card-header">
+                  <h3 class="project-title editable" data-key="proj_6_title">MANAGEMENT SOFTWARE</h3>
+                  <span class="project-year editable" data-key="proj_6_year">2025</span>
+                </div>
+                <h4 class="project-company editable" data-key="proj_6_company">Penang Infra</h4>
+                <div class="project-footer">
+                  <span class="project-status status-ongoing"><i class="fa-solid fa-clock"></i> Project On-going</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Bottom Right Geometric Yellow Triangle Accent -->
+        <div class="bottom-yellow-corner" aria-hidden="true"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>&copy; <span id="currentYear"></span> Mohd Hafhiz Abdul Aziz. Designed with precision &bull; Built with
+        clean HTML5,
+        CSS3 &amp; JavaScript.</p>
+      <div class="footer-quick-actions">
+        <a href="#top" class="back-to-top" id="backToTopBtn" title="Back to top" aria-label="Back to top"><i
+            class="fa-solid fa-arrow-up"></i>
+          <span class="back-to-top-text">Top</span></a>
+        <button id="openContactModal" class="footer-contact-link"><i class="fa-brands fa-telegram"
+            style="color: #229ED9;"></i> Telegram</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= INTERACTIVE CONTACT MODAL (TELEGRAM) ================= -->
+  <div class="modal-backdrop" id="contactModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3><i class="fa-brands fa-telegram" style="color: #229ED9;"></i> Message via Telegram</h3>
+        <button class="modal-close" id="closeContactModal" aria-label="Close modal">&times;</button>
+      </div>
+      <form class="modal-body" id="contactForm">
+        <p class="modal-subtitle" style="margin: 0; font-size: 0.88rem; color: #64748b; line-height: 1.4;">
+          Chat directly with Hafhiz on Telegram. Submitting will
+          open Telegram with your message ready to send.
+        </p>
+        <div class="form-group">
+          <label for="senderName">Your Name / Company (Optional)</label>
+          <input type="text" id="senderName" placeholder="Name/Company">
+        </div>
+        <div class="form-group">
+          <label for="senderEmail">Your Email (Optional)</label>
+          <input type="email" id="senderEmail" placeholder="name@email.com">
+        </div>
+        <div class="form-group">
+          <label for="senderMessage">Message</label>
+          <textarea id="senderMessage" rows="4" required
+            placeholder="Hi Mohd Hafhiz, I came across your resume and would love to discuss...">Hi Mohd Hafhiz, I came across your resume and would love to discuss...</textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn-secondary" id="cancelModalBtn">Cancel</button>
+          <button type="submit" class="btn-primary" id="sendBtn"
+            style="background: #229ED9; border-color: #229ED9; color: #ffffff;">
+            <i class="fa-brands fa-telegram"></i> Open in Telegram
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- Background Music Audio (Autoplay with gentle background volume) -->
+  <audio id="bgMusicAudio" loop autoplay preload="auto">
+    <source src="./assets/relax and work lofi.mp3" type="audio/mpeg">
+    Your browser does not support audio playback.
+  </audio>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
